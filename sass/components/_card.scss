@@ -1,10 +1,10 @@
 .card {
 	perspective: 130rem;
-	min-height: 48rem;
+	height: 52rem;
 	position: relative;
 
 	&:hover &__side--front {
-		transform: rotateY(180deg);
+		transform: rotateY(-180deg);
 	}
 
 	&:hover &__side--back {
@@ -14,22 +14,138 @@
 	&__side {
 		background-color: rgba($color-white, .8);
 		box-shadow: 0 1.6rem 3.4rem rgba($color-black, .15);
-		min-height: 48rem;
+		height: 52rem;
 		transition: all .9s ease;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		backface-visibility: hidden;
+		border-radius: 3px;
+		overflow: hidden; // Prevents card picture from overflowing
 
 		&--front {
 			background-color: $color-white;
 		}
 
 		&--back {
-			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
 			transform: rotateY(180deg);
+
+			&-1 {
+				background-image: $linear-gradient-secondary;
+			}
+
+			&-2 {
+				background-image: $linear-gradient-primary;
+			}
+
+			&-3 {
+				background-image: $linear-gradient-tertiary;
+			}
+
 		}
+	}
+
+	&__picture {
+		height: 24rem;
+		background-size: cover;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+		&--1 {
+			background-image: $linear-gradient-secondary,url(../img/nat-5.jpg);
+		}
+
+		&--2 {
+			background-image: $linear-gradient-primary,url(../img/nat-6.jpg);
+		}
+
+		&--3 {
+			background-image: $linear-gradient-tertiary,url(../img/nat-7.jpg);
+		}
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 100;
+		text-transform: uppercase;
+		color: $color-white;
+		text-align: right;
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 60%;
+
+	}
+
+	&__heading-span {
+		padding: 1rem 1.6rem;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+
+		&--1 {
+			background-image: linear-gradient(
+				to right bottom,
+				rgba($color-secondary-light, .85),
+				rgba($color-secondary-dark, .85)
+			);
+		}
+
+		&--2 {
+			background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary, .85),
+				rgba($color-primary-dark, .85)
+			);
+		}
+
+		&--3 {
+			background-image: linear-gradient(
+				to right bottom,
+				rgba($color-tertiary-light, .85),
+				rgba($color-tertiary-dark, .85)
+			);
+		}
+	}
+
+	&__details {
+		padding: 2.8rem;
+
+		ul {
+			list-style: none;
+			width: 80%;
+			margin: 0 auto;
+
+			li {
+				text-align: center;
+				padding: 1rem;
+				font-size: 1.4rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color-grey-light-2;
+				}
+			}
+		}
+	}
+
+	&__cta {
+		width: 80%;
+		text-align: center;
+		@include center-inside-parent;
+	}
+
+	&__price-box {
+		margin: 0 auto 4rem;
+		color: $color-white;
+	}
+
+	&__price-only {
+		text-transform: uppercase;
+	}
+
+	&__price-value {
+		font-size: 6.2rem;
+		font-weight: 100;
 	}
 
 }
