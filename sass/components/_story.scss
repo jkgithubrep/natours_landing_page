@@ -1,0 +1,57 @@
+.story {
+	background-color: rgba($color-white, .5);
+	padding: 6rem 8rem 6rem 12rem;
+	width: 90%;
+	margin: 0 auto;
+	box-shadow: 0 3rem 6rem rgba($color-black, .1);
+	transform: skewX(-12deg);
+
+	&__figure {
+		height: 16rem;
+		width: 16rem;
+		border-radius: 50%;
+		float: left;
+		shape-outside: circle(50% at 50% 50%);
+		transform: translateX(-4rem) skewX(12deg);
+		clip-path: circle(50% at 50% 50%);
+		position: relative;
+	}
+
+	&__image {
+		height: 100%;
+		transform: translateX(-4rem) scale(1.4);
+		transition: all .5s ease;
+	}
+
+	&__text {
+		transform: skewX(12deg);
+	}
+
+	&__heading {
+
+	}
+	&__content {
+
+	}
+
+	&__caption {
+		font-size: 1.8rem;
+		text-align: center;
+		text-transform: uppercase;
+		color: $color-white;
+		@include center-inside-parent;
+		transform: translate(-50%, 20%);
+		opacity: 0;
+		transition: all .5s ease;
+	}
+
+	&:hover  &__caption {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+
+	&:hover &__image {
+		transform: translateX(-4rem) scale(1);
+		filter: blur(3px) brightness(90%);
+	}
+}
