@@ -13,6 +13,10 @@
 		opacity: 1;
 	}
 
+	&__checkbox:checked ~ &__nav &__link {
+			display: inline-block;
+	}
+
 	&__button {
 		background-color: $color-white;
 		box-shadow: 0 1rem 3rem rgba($color-black, .1);
@@ -24,6 +28,7 @@
 		top: 6rem;
 		right: 6rem;
 		z-index: 2000;
+		cursor: pointer;
 	}
 
 	&__background {
@@ -35,7 +40,7 @@
 		right: 6.5rem;
 		background-image: radial-gradient($color-primary, $color-primary-dark);
 		z-index: 1000;
-		transition: transform .5s;
+		transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1);
 	}
 
 	&__nav {
@@ -46,8 +51,8 @@
 		z-index: 1500;
 
 		width: 0;
-		padding: 0;
 		opacity: 0;
+		transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
 
 	&__list {
@@ -67,7 +72,7 @@
 	&__link {
 		&:link,
 		&:visited {
-			display: inline-block;
+			display: none; // Hide when menu is not active
 			padding: 1.2rem 3.2rem 1rem;
 			font-size: 3.2rem;
 			font-weight: 300;
@@ -84,6 +89,64 @@
 			background-position: 100%;
 			color: $color-primary-light;
 			transform: translateX(1rem);
+		}
+	}
+
+	// ICON
+	&__icon {
+		@include center-inside-parent;
+
+		&,
+		&::before,
+		&::after {
+			display: inline-block;
+			width: 3rem;
+			height: 2px;
+			background-color: $color-dark-grey-3;
+
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: all .2s;
+		}
+
+		&::before {
+			top: -.9rem;
+		}
+
+		&::after {
+			top: .9rem;
+		}
+	}
+
+	&__button:hover &__icon {
+		&::before {
+			top: -1rem;
+		}
+
+		&::after {
+			top: 1rem;
+		}
+	}
+
+	&__checkbox:checked  ~ &__button &__icon {
+		background-color: transparent;
+
+		&::before,
+		&::after {
+			top: 0;
+		}
+
+		&::before {
+			transform: rotate(135deg);
+		}
+
+		&::after {
+			transform: rotate(-135deg);
 		}
 	}
 }
