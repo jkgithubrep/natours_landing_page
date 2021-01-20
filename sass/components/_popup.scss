@@ -1,0 +1,91 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba($color-dark-grey-3, .95);
+	z-index: 10000;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s;
+
+
+	&__window {
+		display: table;
+		width: 75%;
+		max-height: 40rem;
+		background-color: $color-white;
+		border-radius: 3px;
+		box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+		overflow: hidden;
+
+		@include center-inside-parent;
+		@include clearfix;
+
+		transform: translate(-50%, -50%) scale(0.5);
+
+		opacity: 0;
+		transition: all .5s .2s;
+	}
+
+	&__close {
+		&:link,
+		&:visited {
+			display: inline-block;
+			position: absolute;
+			top: 2.6rem;
+			right: 3.2rem;
+			font-size: 3rem;
+			text-decoration: none;
+			color: inherit;
+			line-height: .5;
+		}
+
+		&:hover,
+		&:focus {
+			color: $color-primary-light;
+		}
+	}
+
+	&__left {
+		display: table-cell;
+		width: 30%;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 22rem;
+		object-fit: cover;
+	}
+
+	&__right {
+		display: table-cell;
+		vertical-align: middle;
+		width: 70%;
+		padding: 4rem;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+
+		column-count: 2;
+		column-gap: 4rem;
+		column-rule: 1px solid $color-grey-light-2;
+
+		hyphens: auto;
+	}
+
+	// Open state
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:target &__window {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
