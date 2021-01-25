@@ -1,20 +1,43 @@
 .row{
 	max-width: $grid-width;
-	// background-color: #eee;
 	margin: 0 auto;
+
+	// Reduce grid maximum width on tablet
+	@include adapt(tab-port) {
+		max-width: $grid-width-medium;
+	}
+
+	// Reduce grid maximum width on tablet
+	@include adapt(phone) {
+		max-width: $grid-width-small;
+	}
+
 
 	&:not(:last-child) {
 		margin-bottom: $gutter-vertical;
+
+		@include adapt(tab-port) {
+			margin-bottom: $gutter-vertical-small;
+		}
 	}
 
 	@include clearfix;
 
 	[class^="col-"] {
-		// background-color: orangered;
 		float: left;
 
 		&:not(:last-child) {
 			margin-right: $gutter-horizontal;
+
+			@include adapt(tab-port) {
+				margin-right: 0;
+				margin-bottom: $gutter-vertical-small;
+			}
+		}
+
+		// On mobile/tablet, we switch to one column per row
+		@include adapt(tab-port) {
+			width: 100% !important;
 		}
 	}
 

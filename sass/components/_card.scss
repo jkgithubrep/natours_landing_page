@@ -3,6 +3,7 @@
 	height: 52rem;
 	position: relative;
 
+
 	&:hover &__side--front {
 		transform: rotateY(-180deg);
 	}
@@ -148,4 +149,56 @@
 		font-weight: 100;
 	}
 
+	// Tablet mode
+	@include adapt(tab-port) {
+		height: auto;
+		margin: 0 auto;
+		width: 60%;
+		background-color: $color-white;
+		box-shadow: 0 1.6rem 3.4rem rgba($color-black, .15);
+
+		&:hover &__side--front {
+			transform: rotateY(0);
+		}
+
+		&__side {
+			height: auto;
+			position: relative;
+			background-color: rgba($color-white, .8);
+			overflow: hidden; // Prevents card picture from overflowing
+			box-shadow: none;
+
+			&--back {
+				transform: rotateY(0);
+				padding: 6rem 0 4rem;
+				clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0 100%);
+			}
+		}
+
+		&__heading {
+			width: 80%;
+		}
+
+		&__cta {
+			width: 80%;
+			margin: 0 auto;
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0);
+		}
+
+		&__price-box {
+			margin-bottom: 1rem;
+		}
+
+		&__price-value {
+			font-size: 4.2rem;
+		}
+	}
+
+	@include adapt(phone) {
+		width: 90%;
+		margin: 0 auto;
+	}
 }

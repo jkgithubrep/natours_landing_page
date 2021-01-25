@@ -1,11 +1,17 @@
 .feature-box {
 	background-color: rgba($color-white, .8);
-	padding: 2.4rem;
+	min-height: 34rem;
+	padding: 4rem 2.4rem;
 	text-align: center;
 	border-radius: 3px;
 	box-shadow: 0 1.6rem 4rem rgba($color-black, .15);
-	min-height: 32rem;
 	transition: all .2s;
+
+	@include adapt(tab-port) {
+			min-height: auto;
+			max-width: 50rem;
+			margin: 0 auto;
+	}
 
 	&:hover {
 		transform: translateY(-.4rem) scale(1.05);
@@ -15,7 +21,7 @@
 	&__icon {
 		font-size: 6.4rem;
 		font-weight: 100;
-		margin: 1.6rem 0 3.2rem;
+		margin-bottom: 3.2rem;
 
 		display: inline-block;
 

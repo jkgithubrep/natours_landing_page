@@ -13,6 +13,11 @@
 		transition: all .2s;
 		z-index: 10;
 
+		@include adapt(tab-port) {
+			position: relative;
+			width: 32%;
+		}
+
 		&:hover {
 			outline: 1.2rem solid $color-primary;
 			outline-offset: 1.6rem;
@@ -24,16 +29,33 @@
 		&--p1 {
 			top: -1.6rem;
 			left: 0;
+
+			@include adapt(tab-port) {
+				top: 0;
+				left: 3rem;
+				z-index: 10;
+			}
 		}
 
 		&--p2 {
 			top: 1.6rem;
 			right: 0;
+
+			@include adapt(tab-port) {
+				top: -3rem;
+				z-index: 20;
+			}
 		}
 
 		&--p3 {
 			top: 10rem;
 			left: 20%;
+
+			@include adapt(tab-port) {
+				top: 1rem;
+				left: -2rem;
+				z-index: 10;
+			}
 		}
 	}
 

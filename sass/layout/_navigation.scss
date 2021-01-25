@@ -29,6 +29,14 @@
 		right: 6rem;
 		z-index: 2000;
 		cursor: pointer;
+
+		@include adapt(tab-port) {
+			top: 3rem;
+		}
+
+		@include adapt(phone) {
+			right: 4rem;
+		}
 	}
 
 	&__background {
@@ -41,6 +49,14 @@
 		background-image: radial-gradient($color-primary, $color-primary-dark);
 		z-index: 1000;
 		transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1);
+
+		@include adapt(tab-port) {
+			top: 3.5rem;
+		}
+
+		@include adapt(phone) {
+			right: 4.5rem;
+		}
 	}
 
 	&__nav {

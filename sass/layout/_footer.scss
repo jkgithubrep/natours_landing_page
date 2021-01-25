@@ -1,14 +1,30 @@
 .footer {
 	background-color: $color-dark-grey-3;
 	padding: 8rem;
+	color: $color-grey-light-1;
+
+	@include adapt(tab-port) {
+		padding: 6rem;
+	}
+
+	@include adapt(phone) {
+		padding: 4rem;
+	}
 
 	&__logo {
 		width: 16rem;
 	}
 
-	&__navigation {
+	&__navigation,
+	&__copyright {
 		border-top: 1px solid $color-dark-grey;
 		padding-top: 1.2rem;
+
+		@include adapt(tab-port) {
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
 
 	&__list {
@@ -27,7 +43,7 @@
 		display: inherit;
 		&:link,
 		&:visited {
-			color: $color-grey-light-1;
+			color: inherit;
 			text-transform: uppercase;
 			text-decoration: none;
 		}
@@ -37,11 +53,5 @@
 			color: $color-primary;
 			transform: scale(1.2);
 		}
-	}
-
-	&__copyright {
-		border-top: 1px solid $color-dark-grey;
-		padding-top: 1.2rem;
-		color: $color-grey-light-1;
 	}
 }
