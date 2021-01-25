@@ -241,6 +241,11 @@ body {
     padding: 8rem;
   }
 }
+@media (max-width: 37.5em) {
+  .section-stories {
+    padding: 4rem;
+  }
+}
 
 .section-booking {
   padding: 15rem 0;
@@ -637,6 +642,19 @@ body {
 .story:hover .story__image {
   transform: translateX(-4rem) scale(1);
   filter: blur(3px) brightness(90%);
+}
+@media (max-width: 37.5em) {
+  .story {
+    padding: 4rem 4rem 4rem 6rem;
+    width: 100%;
+    transform: skewX(0);
+  }
+  .story__figure {
+    transform: translateX(-2rem) skewX(0);
+  }
+  .story__text {
+    transform: skewX(0);
+  }
 }
 
 .bg-video {

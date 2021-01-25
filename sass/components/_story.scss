@@ -54,4 +54,19 @@
 		transform: translateX(-4rem) scale(1);
 		filter: blur(3px) brightness(90%);
 	}
+
+	// MOBILE
+	@include adapt(phone) {
+		padding: 4rem 4rem 4rem 6rem;
+		width: 100%;
+		transform: skewX(0);
+
+		&__figure {
+			transform: translateX(-2rem) skewX(0);
+		}
+
+		&__text {
+			transform: skewX(0);
+		}
+	}
 }

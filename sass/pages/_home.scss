@@ -54,6 +54,10 @@
 	@include adapt(tab-port) {
 		padding: 8rem;
 	}
+
+	@include adapt(phone) {
+		padding: 4rem;
+	}
 }
 
 .section-booking {
