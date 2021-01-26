@@ -1,15 +1,20 @@
 .row{
-	max-width: $grid-width;
+	max-width: $grid-width-desktop;
 	margin: 0 auto;
 
 	// Reduce grid maximum width on tablet
-	@include adapt(tab-port) {
-		max-width: $grid-width-medium;
+	@include adapt(tab-land) {
+		max-width: $grid-width-tab-land;
 	}
 
 	// Reduce grid maximum width on tablet
+	@include adapt(tab-port) {
+		max-width: $grid-width-tab-port;
+	}
+
+	// Reduce grid maximum width on phone
 	@include adapt(phone) {
-		max-width: $grid-width-small;
+		max-width: $grid-width-mobile;
 	}
 
 
