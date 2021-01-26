@@ -1,3 +1,8 @@
+# Dev intermediary css files
+style.comp.css
+style.prefix.css
+style.concat.css
+
 # Logs
 logs
 *.log

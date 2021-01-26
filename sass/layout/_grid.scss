@@ -22,6 +22,10 @@
 		margin-bottom: $gutter-vertical;
 
 		@include adapt(tab-port) {
+			margin-bottom: $gutter-vertical-medium;
+		}
+
+		@include adapt(phone) {
 			margin-bottom: $gutter-vertical-small;
 		}
 	}
@@ -36,6 +40,10 @@
 
 			@include adapt(tab-port) {
 				margin-right: 0;
+				margin-bottom: $gutter-vertical-medium;
+			}
+
+			@include adapt(phone) {
 				margin-bottom: $gutter-vertical-small;
 			}
 		}

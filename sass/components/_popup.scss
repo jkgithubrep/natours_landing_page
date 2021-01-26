@@ -6,11 +6,18 @@
 	width: 100%;
 	background-color: rgba($color-dark-grey-3, .95);
 	z-index: 10000;
+	overflow: hidden;
 
 	opacity: 0;
 	visibility: hidden;
 	transition: all .2s;
 
+	@supports	(-webkit-backdrop-filter: blur(10px))
+						or (backdrop-filter: blur(10px)) {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		background-color: rgba($color-dark-grey-3, .3);
+	}
 
 	&__window {
 		display: table;

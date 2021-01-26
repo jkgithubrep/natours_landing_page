@@ -21,6 +21,7 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+		-webkit-backface-visibility: hidden; // Safari 9 - 13
 		backface-visibility: hidden;
 		border-radius: 3px;
 		overflow: hidden; // Prevents card picture from overflowing
@@ -150,10 +151,17 @@
 	}
 
 	// Tablet mode
-	@include adapt(tab-port) {
+	// @include adapt(tab-port) {
+	@media only screen and (max-width: 56.25em),
+					only screen and (hover:none) {
 		height: auto;
 		margin: 0 auto;
 		width: 60%;
+
+		@media only screen and (min-width: 57em) and (hover:none) {
+			width: 100%;
+		}
+
 		background-color: $color-white;
 		box-shadow: 0 1.6rem 3.4rem rgba($color-black, .15);
 

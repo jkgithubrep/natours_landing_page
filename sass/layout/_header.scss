@@ -5,15 +5,28 @@
       rgba($color-primary, .8),
       rgba($color-primary-dark, .8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   position: relative;
 
+	// Choose high resolution image only when useful
+	@media	only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+					only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+					only screen and (min-width: 125em) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary-light, .8),
+				rgba($color-primary-dark, .8)
+			),
+			url(../img/hero.jpg);
+	}
+
 	@include adapt(tab-port) {
   	clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 	}
+
 
 	&__logo-box {
 		position: absolute;
