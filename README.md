@@ -1,10 +1,26 @@
 # Natours - Landing Page
 
-- SCSS
-- BEM methodology
-- 7-1 Sass Architecture pattern
+This is a landing page for a fictitious company, built with [Sass](https://sass-lang.com/), following the [BEM methodology](https://en.bem.info/methodology/) and the 7-1 Sass Architecture pattern (see [leanhowtoprogram - 7-1 Sass Architecture](https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture)).
 
-## Variables
+## Table of content
+
+1. [Features](#features)
+2. [Variables](#variables)
+3. [Mixins](#mixins)
+4. [Base](#base)
+5. [Animations](#animations)
+6. [Utilities](#utilities)
+7. [Others](#others)
+
+## <a name="features"></a>Features
+
+- Fully responsive (desktop, tablet landscape, tablet portrait, mobile).
+- Advanced CSS animations using `@keyframes`, `animation` and `transition`.
+- CSS-only popup.
+- CSS-only menu.
+- Interactive form.
+
+## <a name="variables"></a>Variables
 
 Use Sass variables to set default colors, font sizes, grid system:
 
@@ -49,9 +65,9 @@ $gutter-horizontal: 6rem;
 $default-font-size: 1.6rem;
 ```
 
-## Mixins
+## <a name="mixins"></a>Mixins
 
-Clear floats with the **"clearfix"** hack ([W3schools - How To - Clear Floats](https://www.w3schools.com/howto/howto_css_clearfix.asp)).
+Clear floats with the **"clearfix"** hack ([W3schools - How To - Clear Floats](https://www.w3schools.com/howto/howto_css_clearfix.asp)):
 
 ```scss
 @mixin clearfix {
@@ -98,7 +114,7 @@ Create a **media query manager** using Sass `@content` and `@if` directives:
 }
 ```
 
-### Base
+## <a name="base"></a>Base
 
 Basic reset using the universal selector `*`:
 
@@ -142,7 +158,7 @@ Customize the look of the portion of an element selected by the user by using th
 }
 ```
 
-### Animations
+## <a name="animations"></a>Animations
 
 Use the `@keyframes` CSS at-rule to **create advanced animations** ([MDN - @keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes), [MDN - Using CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)).
 
@@ -164,7 +180,7 @@ Use the `@keyframes` CSS at-rule to **create advanced animations** ([MDN - @keyf
 }
 ```
 
-### Utilities
+## <a name="utilities"></a>Utilities
 
 Make margins consistent throughout the page by using "utility" classes:
 
@@ -198,7 +214,7 @@ Make margins consistent throughout the page by using "utility" classes:
 }
 ```
 
-### Others
+## <a name="others"></a>Others
 
 Use `clip-path` property to **create a clipping region that sets what part of an element should be shown** ([MDN - clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path))
 
