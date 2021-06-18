@@ -2,6 +2,8 @@
 
 This is a landing page for a fictitious company, built with [Sass](https://sass-lang.com/), following the [BEM methodology](https://en.bem.info/methodology/) and the 7-1 Sass Architecture pattern (see [leanhowtoprogram - 7-1 Sass Architecture](https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture)).
 
+![Video](https://gitlab.com/jkgitlabwork/udemy_advanced_css_natours/-/raw/docs/menu_animation_720p.mov)
+
 ## Table of content
 
 1. [Features](#features)
